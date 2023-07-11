@@ -2,6 +2,9 @@ FROM node:18-alpine
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN apk update \
+    && apk add git
+
 RUN npm install -g \
     semantic-release@^21.0.7\
     @semantic-release/git@^10.0.1 \
