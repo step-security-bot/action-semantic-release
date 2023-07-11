@@ -1,6 +1,8 @@
 name: Release
 run-name: ${{ github.actor }} is creating a release
-on: [push]
+on:
+  push:
+    branches: [main]
 jobs:
   Release:
     runs-on: ubuntu-latest
