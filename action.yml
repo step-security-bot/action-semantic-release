@@ -1,0 +1,15 @@
+name: "action-semantic-release"
+description: "Automatically release a new version on GitHub"
+inputs:
+  example-input:
+    description: "This is just an example input for now"
+    required: true
+    default: "default"
+outputs:
+  example-output:
+    description: "This is just an example output"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.example-input }}
