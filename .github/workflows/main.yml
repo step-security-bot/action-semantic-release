@@ -1,5 +1,5 @@
 name: Release
-run-name: ${{ github.event_name }} is creating a release
+run-name: ${{ github.actor }} is creating a release
 on:
   push:
     branches: [main]
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Semantic Release
-        uses: outoforbitdev/action-semantic-release@v1.0.0
+        uses: outoforbitdev/action-semantic-release@v1
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
