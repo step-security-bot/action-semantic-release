@@ -2,6 +2,8 @@ FROM node:18-alpine
 
 COPY entrypoint.sh /entrypoint.sh
 
+COPY .releaserc /.releaserc
+
 RUN apk update \
     && apk add git
 
