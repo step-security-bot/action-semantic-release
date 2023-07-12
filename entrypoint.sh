@@ -2,4 +2,6 @@
 
 git config --global --add safe.directory "${GITHUB_WORKSPACE:=.}"
 
+export GITHUB_TOKEN=$1
+
 semantic-release
