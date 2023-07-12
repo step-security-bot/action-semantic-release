@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
-ls
+git config --global --add safe.directory "${GITHUB_WORKSPACE:=.}"
 
 semantic-release
