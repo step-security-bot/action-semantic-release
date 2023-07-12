@@ -13,10 +13,7 @@ jobs:
       - name: Semantic Release
         uses: ./
         id: semanticrelease
-        env:
-          GITHUB_TOKEN: ${{ secrets.github-token }}
         with:
-          example-input: "example-input"
+          github-token: ${{ secrets.github-token }}
       - name: Get the output time
         run: echo "The time was ${{ steps.semanticrelease.outputs.time}}"
-        
