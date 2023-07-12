@@ -4,4 +4,5 @@
     "@semantic-release/git",
     "@semantic-release/changelog",
     "@semantic-release/github"
+  ]
 }
