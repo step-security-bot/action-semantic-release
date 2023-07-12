@@ -3,7 +3,7 @@ FROM node:18-alpine
 RUN apk update \
     && apk add git
 
-RUN npx semantic-release@^21.0.7
+RUN npx semantic-release@^21
 
 COPY entrypoint.sh /entrypoint.sh
 
