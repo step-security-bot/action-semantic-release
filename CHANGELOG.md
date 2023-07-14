@@ -1,4 +1,11 @@
-# [1.1.0-beta.2](https://github.com/outoforbitdev/action-semantic-release/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2023-07-14)
+## [1.0.11](https://github.com/outoforbitdev/action-semantic-release/compare/v1.0.10...v1.0.11) (2023-07-14)
+
+
+### Reverts
+
+* Revert "* feat(branches): Support prerelease branches. Also add CI tests" (#14) ([6d228d8](https://github.com/outoforbitdev/action-semantic-release/commit/6d228d85aa87ff3737b3b67dc1ecec832158eae7)), closes [#14](https://github.com/outoforbitdev/action-semantic-release/issues/14)
+
+## [1.0.10](https://github.com/outoforbitdev/action-semantic-release/compare/v1.0.9...v1.0.10) (2023-07-14)
 
 
 ### Bug Fixes
