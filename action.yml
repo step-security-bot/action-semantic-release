@@ -22,3 +22,4 @@ runs:
   args:
     - ${{ inputs.github-token }}
     - ${{ inputs.branches }}
+    - ${{ inputs.dry-run }}
