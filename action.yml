@@ -6,8 +6,8 @@ inputs:
     required: true
     default: "default"
 outputs:
-  example-output:
-    description: "This is just an example output"
+  version:
+    description: "The most recently released version"
 runs:
   using: 'docker'
   image: 'Dockerfile'

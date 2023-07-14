@@ -3,6 +3,10 @@
   "plugins": [
     "@semantic-release/git",
     "@semantic-release/changelog",
-    "@semantic-release/github"
+    "@semantic-release/github",
+    ["@semantic-release/exec",
+    {
+      "success": "echo \"version=lastRelease.version\" >> $GITHUB_OUTPUT"
+    }]
   ]
 }
