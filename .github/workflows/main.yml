@@ -2,11 +2,7 @@ name: Release
 run-name: Releasing
 on:
   push:
-    branches:
-      - main
-      - beta
-      - dev
-      - staging
+    branches: [main]
 jobs:
   Release:
     runs-on: ubuntu-latest

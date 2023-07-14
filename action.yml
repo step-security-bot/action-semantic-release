@@ -5,14 +5,6 @@ inputs:
     description: "This is just an example input for now"
     required: true
     default: "default"
-  branches:
-    description: "The branch configuration for semantic-release: https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#branches"
-    required: false
-    default: "['main', {name: 'beta', prerelease: true}, {name: 'dev', prerelease: true}, {name: 'staging', prerelease: true}]"
-  dry-run:
-    description: "Whether to do a release dry-run"
-    required: false
-    default: false
 outputs:
   version:
     description: "The most recently released version"
@@ -21,4 +13,3 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.github-token }}
-    - ${{ inputs.branches }}
