@@ -5,10 +5,6 @@ inputs:
     description: "This is just an example input for now"
     required: true
     default: "default"
-  dry-run:
-    description: "Whether to do a release dry-run"
-    required: false
-    default: false
 outputs:
   version:
     description: "The most recently released version"
@@ -17,4 +13,3 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.github-token }}
-    - ${{ inputs.dry-run }}

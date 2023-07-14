@@ -1,16 +1,9 @@
-# [1.1.0-beta.2](https://github.com/outoforbitdev/action-semantic-release/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2023-07-14)
+## [1.0.10](https://github.com/outoforbitdev/action-semantic-release/compare/v1.0.9...v1.0.10) (2023-07-14)
 
 
 ### Bug Fixes
 
 * **branches:** make 'main' a string ([fee047c](https://github.com/outoforbitdev/action-semantic-release/commit/fee047c88ef9276b50a64b2cd04e8ea3a93cce77))
-
-
-### Reverts
-
-* Revert "fix(branches): make 'main' a string" (#12) ([b94b0b4](https://github.com/outoforbitdev/action-semantic-release/commit/b94b0b4c08986544d58d333c7ca98563409c0d61)), closes [#12](https://github.com/outoforbitdev/action-semantic-release/issues/12)
-
-## [1.0.10](https://github.com/outoforbitdev/action-semantic-release/compare/v1.0.9...v1.0.10) (2023-07-14)
 
 
 ### Reverts
