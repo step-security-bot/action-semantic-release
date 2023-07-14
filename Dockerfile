@@ -1,7 +1,7 @@
 FROM outoforbitdev/node:1.0.2
 
-RUN apk update \
-    && apk add git
+RUN apt-get update \
+    && apt-get install -y git
 
 RUN npm install -g \
     semantic-release@^21.0.7\
