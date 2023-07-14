@@ -1,14 +1,15 @@
 {
   "branches": ["main"],
   "plugins": [
-    "@semantic-release/git",
-    "@semantic-release/changelog",
     "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
     ["@semantic-release/exec",
     {
       "analyzeCommitsCmd": "echo \"version=${lastRelease.version}\" >> $GITHUB_OUTPUT",
       "publishCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT"
     }],
-    "@semantic-release/github"
+    "@semantic-release/github",
+    "@semantic-release/git"
   ]
 }
