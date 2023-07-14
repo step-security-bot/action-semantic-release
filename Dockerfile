@@ -6,7 +6,8 @@ RUN apk update \
 RUN npm install -g \
     semantic-release@^21.0.7\
     @semantic-release/git@^10.0.1 \
-    @semantic-release/changelog@^6.0.3
+    @semantic-release/changelog@^6.0.3 \
+    @semantic-release/exec@^6
 
 COPY entrypoint.sh /entrypoint.sh
 
