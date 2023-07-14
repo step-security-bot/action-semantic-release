@@ -8,7 +8,7 @@ inputs:
   branches:
     description: "The branch configuration for semantic-release: https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#branches"
     required: false
-    default: "[main, {name: 'beta', prerelease: true}, {name: 'dev', prerelease: true}, {name: 'staging', prerelease: true}]"
+    default: "['main', {name: 'beta', prerelease: true}]"
   dry-run:
     description: "Whether to do a release dry-run"
     required: false
