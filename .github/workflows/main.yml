@@ -1,5 +1,5 @@
 name: Release
-run-name: ${{ github.actor }} is creating a release
+run-name: Releasing
 on:
   push:
     branches: [main]
@@ -15,5 +15,5 @@ jobs:
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get the output time
-        run: echo "The time was ${{ steps.semanticrelease.outputs.time}}"
+      - name: Latest version
+        run: echo "Latest version ${{ steps.semanticrelease.outputs.version}}"
