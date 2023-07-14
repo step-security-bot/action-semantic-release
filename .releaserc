@@ -6,7 +6,7 @@
     "@semantic-release/github",
     ["@semantic-release/exec",
     {
-      "success": "echo \"version=lastRelease.version\" >> $GITHUB_OUTPUT"
+      "success": "echo \"version=releases\" >> $GITHUB_OUTPUT"
     }]
   ]
 }
