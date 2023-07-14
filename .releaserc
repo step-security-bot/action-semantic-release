@@ -6,7 +6,8 @@
     "@semantic-release/commit-analyzer",
     ["@semantic-release/exec",
     {
-      "successCmd": "echo \"version=${lastRelease.version}\" >> $GITHUB_OUTPUT"
+      "analyzeCommitsCmd": "echo \"version=${lastRelease.version}\" >> $GITHUB_OUTPUT",
+      "publishCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT"
     }],
     "@semantic-release/github"
   ]
