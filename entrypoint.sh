@@ -1,8 +1,11 @@
 #!/bin/sh -l
 
 github_token=$1
-branches=$2
-dry_run=$3
+dry_run=$2
+dr_run_arg=""
+if $dry_run
+then dry_run_arg="--dryRun"
+fi
 
 git config --global --add safe.directory "${GITHUB_WORKSPACE:=.}"
 
