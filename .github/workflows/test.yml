@@ -1,7 +1,11 @@
-name: Release
-run-name: Releasing
+name: Test
+run-name: Running Tests
 on:
-  push:
+  pull_request:
+    types: 
+      - opened
+      - reopened
+      - synchronize
     branches:
       - main
       - beta
@@ -19,5 +23,6 @@ jobs:
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          dry-run: true
       - name: Latest version
         run: echo "Latest version is ${{ steps.semanticrelease.outputs.version}}"
