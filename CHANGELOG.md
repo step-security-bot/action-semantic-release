@@ -1,3 +1,14 @@
+## [1.2.2](https://github.com/outoforbitdev/action-semantic-release/compare/v1.2.1...v1.2.2) (2023-07-17)
+
+
+### Bug Fixes
+
+* **action:** fix typo in docker tag ([005197a](https://github.com/outoforbitdev/action-semantic-release/commit/005197a778fd7d1a521b972e2fa9340fa4d19c69))
+* **action:** reference correct docker image ([266e553](https://github.com/outoforbitdev/action-semantic-release/commit/266e553649189815a76d78359f547576ff95055a))
+* **action:** use correct docker tag ([53e661e](https://github.com/outoforbitdev/action-semantic-release/commit/53e661e96cee684c39d0f33bcbfbeb893e978373))
+* **action:** use nextRelease from verifyReleaseCmd ([d8e4ced](https://github.com/outoforbitdev/action-semantic-release/commit/d8e4ced8d26567681d31a1d7a5a653a29429137a))
+* **ci:** bump action-docker-publish v1.1.1 ([6609f83](https://github.com/outoforbitdev/action-semantic-release/commit/6609f83930cb224511f1721c4b0b56617ea8cc1b))
+
 ## [1.2.1](https://github.com/outoforbitdev/action-semantic-release/compare/v1.2.0...v1.2.1) (2023-07-17)
 
 
