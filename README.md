@@ -1,4 +1,5 @@
 # action-semantic-release
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/outoforbitdev/action-semantic-release/badge)](https://securityscorecards.dev/viewer/?uri=github.com/outoforbitdev/action-semantic-release)
 GitHub Action for running [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
 
 ## Usage
