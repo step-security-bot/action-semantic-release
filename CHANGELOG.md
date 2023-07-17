@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/outoforbitdev/action-semantic-release/compare/v1.1.0...v1.2.0) (2023-07-17)
+
+
+### Features
+
+* **action:** use a pre-built docker image instead of building one on demand ([#17](https://github.com/outoforbitdev/action-semantic-release/issues/17)) ([eebfc8f](https://github.com/outoforbitdev/action-semantic-release/commit/eebfc8f5ea2b474e537827b58e3fb8af7c75bb19))
+
 # [1.1.0](https://github.com/outoforbitdev/action-semantic-release/compare/v1.0.11...v1.1.0) (2023-07-14)
 
 
