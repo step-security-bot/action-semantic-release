@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/outoforbitdev/action-semantic-release/compare/v1.2.0...v1.2.1) (2023-07-17)
+
+
+### Bug Fixes
+
+* **action:** correct use of dryRun ([b764992](https://github.com/outoforbitdev/action-semantic-release/commit/b7649925c5d0484ea4ffb9ce749845d9079511d3))
+
 # [1.2.0](https://github.com/outoforbitdev/action-semantic-release/compare/v1.1.0...v1.2.0) (2023-07-17)
 
 
