@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Semantic Release
-        uses: ./
+        uses: outoforbitdev/action-semantic-release@v1.1.0
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

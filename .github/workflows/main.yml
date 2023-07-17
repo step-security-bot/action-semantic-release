@@ -8,9 +8,42 @@ on:
       - dev
       - staging
 jobs:
-  Release:
+  semantic-release-dry:
     runs-on: ubuntu-latest
     name: Semantic Release
+    outputs:
+      version: ${{steps.semanticrelease.outputs.version}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Semantic Release
+        uses: outoforbitdev/action-semantic-release@v1.1.0
+        id: semanticrelease
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Output version
+        run: echo "Latest version is ${{ steps.semanticrelease.outputs.version}}"
+  docker-publish:
+    runs-on: ubuntu-latest
+    name: Docker Publish
+    needs: semantic-release-dry
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Docker Publish
+        uses: outoforbitdev/action-docker-publish@v1.0.5
+        id: dockerpublish
+        with:
+          docker-username: ${{ secrets.DOCKER_USERNAME }}
+          docker-token: ${{ secrets.DOCKER_TOKEN }}
+          image-name: ${{ vars.IMAGE_NAME }}
+          image-tag: ${{ needs.semantic-release-dry.outputs.version }}
+      - name: Output Tags
+        run: echo "Tag is ${{steps.dockerpublish.output.sha-tag}}"
+  semantic-release:
+    runs-on: ubuntu-latest
+    name: Semantic Release
+    needs: docker-publish
     steps:
       - name: Checkout
         uses: actions/checkout@v3

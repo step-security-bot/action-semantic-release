@@ -14,7 +14,7 @@ outputs:
     description: "The most recently released version"
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://outoforbitdev/action-semantic-release:v1.2.0'
   args:
     - ${{ inputs.github-token }}
     - ${{ inputs.dry-run }}
