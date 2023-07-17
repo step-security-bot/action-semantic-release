@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Docker Publish
-        uses: outoforbitdev/action-docker-publish@v1.0.5
+        uses: outoforbitdev/action-docker-publish@v1.1.0
         id: dockerpublish
         with:
           docker-username: ${{ secrets.DOCKER_USERNAME }}
