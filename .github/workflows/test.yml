@@ -11,6 +11,8 @@ on:
       - beta
       - dev
       - staging
+permissions:
+  contents: read
 jobs:
   Test:
     runs-on: ubuntu-latest
@@ -21,7 +23,7 @@ jobs:
       - name: Test Build
         run: docker build .
       - name: Test Release
-        uses: outoforbitdev/action-semantic-release@v1.1.0
+        uses: outoforbitdev/action-semantic-release@v1.2.2
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

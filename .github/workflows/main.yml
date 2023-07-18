@@ -11,6 +11,8 @@ jobs:
   semantic-release-dry:
     runs-on: ubuntu-latest
     name: Semantic Release
+    permissions:
+      contents: read
     outputs:
       version: ${{steps.semanticrelease.outputs.version}}
     steps:
@@ -28,6 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Docker Publish
     needs: semantic-release-dry
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -45,6 +49,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Semantic Release
     needs: docker-publish
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
