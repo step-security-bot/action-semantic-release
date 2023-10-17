@@ -27,6 +27,7 @@ jobs:
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          dry-run: true
       - name: Output version
         env:
           LAST_VERSION: ${{ steps.semanticrelease.outputs.last-version }}
