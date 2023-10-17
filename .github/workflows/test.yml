@@ -23,10 +23,9 @@ jobs:
       - name: Test Build
         run: docker build .
       - name: Test Release
-        uses: outoforbitdev/action-semantic-release@v1.2.2
+        uses: ./
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          dry-run: true
-      - name: Latest version
-        run: echo "Latest version is ${{ steps.semanticrelease.outputs.version}}"
+      - name: Output version
+        run: echo "Latest version is ${{ steps.semanticrelease.outputs.next-version}}"
