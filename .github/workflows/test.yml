@@ -12,7 +12,7 @@ on:
       - dev
       - staging
 permissions:
-  contents: read
+  contents: write
 jobs:
   Test:
     runs-on: ubuntu-latest
