@@ -28,4 +28,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Output version
-        run: echo "Latest version is ${{ steps.semanticrelease.outputs.next-version}}"
+        run: echo "Last version ${{ steps.semanticrelease.outputs.last-version}}\nNext version ${{ steps.semanticrelease.outputs.next-version }}\nBoolean ${{ steps.semanticrelease.outputs.version-released }}"
