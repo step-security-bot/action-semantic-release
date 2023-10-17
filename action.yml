@@ -10,7 +10,7 @@ inputs:
     required: false
     default: false
 outputs:
-  last-version:
+  version:
     description: "The last released version"
   next-version:
     description: "The next released version"
