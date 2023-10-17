@@ -12,3 +12,5 @@ git config --global --add safe.directory "${GITHUB_WORKSPACE:=.}"
 export GITHUB_TOKEN=$github_token
 
 npx semantic-release $dry_run_arg --debug
+
+echo $GITHUB_OUTPUT
