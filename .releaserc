@@ -26,8 +26,7 @@
     ["@semantic-release/exec",
     {
       "analyzeCommitsCmd": "echo \"last-version=${lastRelease.version}\" >> $GITHUB_OUTPUT",
-      "verifyReleaseCmd": "echo \"next-version=${nextRelease.version}\" >> $GITHUB_OUTPUT\necho \"version-released=true\" >> $GITHUB_OUTPUT"
-    }],
+      "verifyReleaseCmd": "echo \"next-version=${nextRelease.version}\" >> $GITHUB_OUTPUT; echo \"version-released=true\" >> $GITHUB_OUTPUT"    }],
     "@semantic-release/github",
     "@semantic-release/git"
   ]
