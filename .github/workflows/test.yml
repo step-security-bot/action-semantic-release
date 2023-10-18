@@ -31,4 +31,4 @@ jobs:
           LAST_VERSION: ${{ steps.semanticrelease.outputs.last-version }}
           NEXT_VERSION: ${{ steps.semanticrelease.outputs.next-version }}
           VERSION_RELEASED: ${{ steps.semanticrelease.outputs.versionReleased}}
-        run: echo "### Version Summaries" >> $$GITHUB_STEP_SUMMARY; echo "* Last version - $LAST_VERSION"; echo "* Next version - $NEXT_VERSION"
+        run: echo "### Version Summaries" >> $$GITHUB_STEP_SUMMARY; echo "* Last version - $LAST_VERSION" >> $$GITHUB_STEP_SUMMARY; echo "* Next version - $NEXT_VERSION" >> $$GITHUB_STEP_SUMMARY
