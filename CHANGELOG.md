@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/outoforbitdev/action-semantic-release/compare/v1.2.2...v1.3.0) (2023-10-18)
+
+
+### Features
+
+* **outputs:** add output for whether a version is released ([#27](https://github.com/outoforbitdev/action-semantic-release/issues/27)) ([064be2d](https://github.com/outoforbitdev/action-semantic-release/commit/064be2de78dcec87165fbf2d4fa85871e7b8d089))
+
 ## [1.2.2](https://github.com/outoforbitdev/action-semantic-release/compare/v1.2.1...v1.2.2) (2023-07-17)
 
 
