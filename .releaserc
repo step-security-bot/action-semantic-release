@@ -15,7 +15,8 @@
     },
     {
       "name": "staging",
-      "prerelease": true
+      "prerelease": true,
+      "channel": "rc"
     }
   ],
   "plugins": [
@@ -24,8 +25,8 @@
     "@semantic-release/changelog",
     ["@semantic-release/exec",
     {
-      "analyzeCommitsCmd": "echo \"version=${lastRelease.version}\" >> $GITHUB_OUTPUT",
-      "verifyReleaseCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT"
+      "analyzeCommitsCmd": "echo \"last-version=${lastRelease.version}\" >> $GITHUB_OUTPUT",
+      "verifyReleaseCmd": "echo \"next-version=${nextRelease.version}\" >> $GITHUB_OUTPUT\necho \"version-released=true\" >> $GITHUB_OUTPUT"
     }],
     "@semantic-release/github",
     "@semantic-release/git"

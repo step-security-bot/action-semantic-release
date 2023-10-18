@@ -12,7 +12,7 @@ on:
       - dev
       - staging
 permissions:
-  contents: read
+  contents: write
 jobs:
   Test:
     runs-on: ubuntu-latest
@@ -20,13 +20,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Test Build
-        run: docker build .
       - name: Test Release
-        uses: outoforbitdev/action-semantic-release@v1.2.2
+        uses: ./
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           dry-run: true
-      - name: Latest version
-        run: echo "Latest version is ${{ steps.semanticrelease.outputs.version}}"
+      - name: Output versions
+        env:
+          LAST_VERSION: ${{ steps.semanticrelease.outputs.last-version }}
+          NEXT_VERSION: ${{ steps.semanticrelease.outputs.next-version }}
+          VERSION_RELEASED: ${{ steps.semanticrelease.outputs.versionReleased}}
+        run: echo "Last version $LAST_VERSION"; echo "Next version $NEXT_VERSION"; echo "Boolean $VERSION_RELEASED"

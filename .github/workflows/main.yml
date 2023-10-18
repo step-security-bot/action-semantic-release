@@ -8,28 +8,33 @@ on:
       - dev
       - staging
 jobs:
-  semantic-release-dry:
+  semantic-release:
     runs-on: ubuntu-latest
     name: Semantic Release
     permissions:
       contents: write
     outputs:
-      version: ${{steps.semanticrelease.outputs.version}}
+      versionReleased: ${{steps.semanticrelease.outputs.version-released}}
+      version: ${{steps.semanticrelease.outputs.next-version}}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Semantic Release
-        uses: outoforbitdev/action-semantic-release@v1.2.2
+        uses: ./
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          dry-run: true
-      - name: Output version
-        run: echo "Latest version is ${{ steps.semanticrelease.outputs.version}}"
+      - name: Output versions
+        env:
+          LAST_VERSION: ${{ steps.semanticrelease.outputs.last-version }}
+          NEXT_VERSION: ${{ steps.semanticrelease.outputs.next-version }}
+          VERSION_RELEASED: ${{ steps.semanticrelease.outputs.versionReleased}}
+        run: echo "Last version $LAST_VERSION"; echo "Next version $NEXT_VERSION"; echo "Boolean $VERSION_RELEASED"
   docker-publish:
+    if:   ${{ needs.semantic-release.outputs.versionReleased }}
     runs-on: ubuntu-latest
     name: Docker Publish
-    needs: semantic-release-dry
+    needs: semantic-release
     permissions:
       contents: read
     steps:
@@ -42,22 +47,6 @@ jobs:
           docker-username: ${{ secrets.DOCKER_USERNAME }}
           docker-token: ${{ secrets.DOCKER_TOKEN }}
           image-name: ${{ vars.IMAGE_NAME }}
-          image-tag: ${{ needs.semantic-release-dry.outputs.version }}
+          image-tag: ${{ needs.semantic-release.outputs.version }}
       - name: Output Tags
         run: echo "Tag is ${{steps.dockerpublish.output.sha-tag}}"
-  semantic-release:
-    runs-on: ubuntu-latest
-    name: Semantic Release
-    needs: docker-publish
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Semantic Release
-        uses: ./
-        id: semanticrelease
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Latest version
-        run: echo "Latest version is ${{ steps.semanticrelease.outputs.version}}"

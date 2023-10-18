@@ -31,7 +31,9 @@ GitHub Action for running [semantic-release](https://semantic-release.gitbook.io
 
 ### Outputs
 
-* `version`: The most up-to-date version. If the action releases a new version this will be the new version. If the action does not release a version this will be the most recently released version.
+* `last-version`: The last released version.
+* `next-version`: The next version to be released. During a dry run this is the next version that _would_ be released, but was not because of the dry run. During a non-dry run this is the version that was just released by the action.
+* `version-released`: Whether a new version was released. Note that this can be true even during a dry run.
 
 ### Example
 ```
@@ -39,7 +41,8 @@ semantic-release:
     runs-on: ubuntu-latest
     name: Semantic Release
     outputs:
-      version: ${{steps.semanticrelease.outputs.version}}
+      version-released: ${{steps.semanticrelease.outputs.version-released}}
+      next-version: ${{steps.semanticrelease.outputs.next-version}}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
