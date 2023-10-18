@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/outoforbitdev/action-semantic-release/compare/v1.3.1...v1.3.2) (2023-10-18)
+
+
+### Bug Fixes
+
+* **outputs:** add summary ([#45](https://github.com/outoforbitdev/action-semantic-release/issues/45)) ([42d55cb](https://github.com/outoforbitdev/action-semantic-release/commit/42d55cbe476e43978dc2de82c17a64f43905909c))
+
 ## [1.3.1](https://github.com/outoforbitdev/action-semantic-release/compare/v1.3.0...v1.3.1) (2023-10-18)
 
 
