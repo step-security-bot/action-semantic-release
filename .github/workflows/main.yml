@@ -24,8 +24,12 @@ jobs:
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Output version
-        run: echo "Latest version is ${{ steps.semanticrelease.outputs.next-version}}"
+      - name: Output versions
+        env:
+          LAST_VERSION: ${{ steps.semanticrelease.outputs.last-version }}
+          NEXT_VERSION: ${{ steps.semanticrelease.outputs.next-version }}
+          VERSION_RELEASED: ${{ steps.semanticrelease.outputs.versionReleased}}
+        run: echo "Last version $LAST_VERSION"; echo "Next version $NEXT_VERSION"; echo "Boolean $VERSION_RELEASED"
   docker-publish:
     if:   ${{ needs.semantic-release.outputs.versionReleased }}
     runs-on: ubuntu-latest

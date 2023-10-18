@@ -20,15 +20,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # - name: Test Build
-      #   run: docker build .
       - name: Test Release
         uses: ./
         id: semanticrelease
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           dry-run: true
-      - name: Output version
+      - name: Output versions
         env:
           LAST_VERSION: ${{ steps.semanticrelease.outputs.last-version }}
-        run: echo "Last version $LAST_VERSION"; echo "Next version ${{ steps.semanticrelease.outputs.next-version }}"; echo "Boolean ${{ steps.semanticrelease.outputs.version-released }}"
+          NEXT_VERSION: ${{ steps.semanticrelease.outputs.next-version }}
+          VERSION_RELEASED: ${{ steps.semanticrelease.outputs.versionReleased}}
+        run: echo "Last version $LAST_VERSION"; echo "Next version $NEXT_VERSION"; echo "Boolean $VERSION_RELEASED"
